@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente AI Autonomo</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="modal-overlay" id="sandbox-modal">
+        <div class="modal">
+            <h2 class="modal-title" id="modal-title">Choose Sandbox Folder</h2>
+            <p class="modal-desc" id="modal-desc">Enter the absolute path to the folder where the agent will operate. It cannot access files outside this folder.</p>
+            <form id="sandbox-form">
+                <input
+                    type="text"
+                    id="sandbox-input"
+                    class="modal-input"
+                    placeholder="e.g. C:\Users\user\projects\my-folder"
+                    autocomplete="off"
+                />
+                <div class="modal-error" id="sandbox-error"></div>
+                <div class="modal-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" flex-shrink="0">
+                        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                    </svg>
+                    <span>All files within this folder may be read and sent to Google's servers for processing. Only select folders you trust and own. Malicious file content could attempt prompt injection attacks against the agent.</span>
+                </div>
+                <button type="submit" class="modal-btn" id="sandbox-btn">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <span class="header-title">Agent AI Autonomous</span>
+        </header>
+
+        <div class="messages" id="messages">
+        </div>
+
+        <form class="input-area" id="chat-form">
+            <textarea
+                id="prompt-input"
+                placeholder="Write a message..."
+                rows="1"
+                autocomplete="off"
+                disabled
+            ></textarea>
+            <button type="submit" id="send-btn" aria-label="Invia" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.5/purify.min.js"></script>
+    <script src="/script/script.js"></script>
+</body>
+</html>
