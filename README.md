@@ -7,6 +7,9 @@ This thesis project focus on the development of a Spring Boot-based Java applica
 The goal is to create a system capable of interpreting complex commands expressed in natural language, such as "Find all .log files, summarize the errors, and move the files to an archive folder" and executing them autonomously.
 Furthermore, the agent must operate within a restricted workspace, without the ability to access files or directories outside of it.
 
+## Disclaimer
+As said in the introduction, the priority is focusing on developing on AI agent, more than handling user auth, persistence db, etc. But at the end the project is extensible, improving and adding the features (see the section [Potential future features](#potential-future-features)).
+
 # Project structure
 Originally this repository was on the SUPSI's GitLab (that's why there's `.gitlab-ci.yml`).
 
